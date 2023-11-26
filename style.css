@@ -1,0 +1,299 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Montserrat', sans-serif;      
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+
+#cursor{
+    background-color: #95C11E;
+    height: 25px;
+    width: 25px;
+    z-index: 99;
+    position: fixed;
+    border-radius: 100%;
+}
+#cursor-blur{
+    background-color: #96c11e71;
+    height: 500px;
+    width: 500px;
+    z-index: 9;
+    position: fixed;
+    border-radius: 100%;
+    filter: blur(70px);
+}
+
+
+#nav{
+    height: 150px;
+    width: 100%;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 150px;
+    gap: 45px;
+    z-index: 99;
+    position: fixed;
+}
+
+#nav img{
+    height: 75px;
+}
+
+#nav h4{
+    font-weight: 100;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+
+#main{
+    position: relative;
+    background-color: rgba(0,0,0,0.45);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 1px  #95C11E;
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+#page1 p{
+    font-size: 22px;
+    font-weight: 500;
+    width: 50%;
+}
+
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    margin-right: 20px;
+    -webkit-text-stroke: 3px  #ffffff;
+    color: transparent;
+    transition: all linear 0.5s;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+    -webkit-text-stroke: 3px  #95C11E;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    margin-top: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img{
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width: 50%;
+    text-align: center;
+}
+
+#about-us-in h3{
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+#about-us-in p{
+    font-size: 24px;
+    line-height: 39px;
+}
+
+#cards-container{
+    /* background: red; */
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.cards{
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 28%;
+    /* background-color: blue; */
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+.cards:hover{
+    transform: rotate3d(1,-1,0,20deg);
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+#card1{
+    background-image: url('home-toptracer.avif');
+}
+
+#card2{
+    background-image: url('hero-4.webp');
+}
+
+#card3{
+    background-image: url('home-lessons.webp');
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.cards:hover .overlay{
+    opacity: 100%;
+}
+
+.overlay h4{
+    color: #000;
+    font-size: 33px;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.overlay p{
+    color: #000;
+    font-size: 18px;
+}
+
+#green-div{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom , #25A436, #95C11E );
+}
+
+#green-div h4{
+    width: 45%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 27px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+}
+
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 10%;
+}
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
